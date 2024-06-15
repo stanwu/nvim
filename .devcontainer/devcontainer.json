@@ -1,4 +1,16 @@
 {
     "name": "Neovim Container",
-    "dockerFile": "Dockerfile"
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:0-ubuntu-22.04",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/zsh"
+            },
+            "extensions": [
+                "ms-vscode.vscode-typescript-tslint-plugin",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "postCreateCommand": "bash .devcontainer/post-create.sh"
 }
