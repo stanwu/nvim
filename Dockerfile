@@ -22,12 +22,3 @@ RUN apt-get update && \
 
 # Clone the specified GitHub repository to the target path
 RUN git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME}/nvim"
-
-# Change the default shell to zsh
-RUN chsh -s /bin/zsh
-
-# Set the working directory
-WORKDIR /root
-
-# Set the command to run when the container starts
-CMD [ "zsh" ]
